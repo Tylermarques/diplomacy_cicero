@@ -1,0 +1,10 @@
+# Don't load the models into the image, we'll mount them instead
+./models/
+./models_encrypted/
+./.venv/
+./.git/
+./bin/
+./docs/
+
+# CMAKE Cache
+**/build/

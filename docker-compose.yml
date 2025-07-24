@@ -1,0 +1,16 @@
+services:
+  cicero:
+    build: .
+    image: diplomacy_cicero:latest
+    container_name: diplomacy_cicero
+    # Bind-mount your pre-downloaded model files:
+    volumes:
+      - ./models:/app/models:ro
+    # Expose and map FastAPI port
+    ports:
+      - "8000:8000"
+    # (Optional) If you need any env overrides—these mirror the Dockerfile defaults:
+    environment:
+      - UV_COMPILE_BYTECODE=1
+      - UV_LINK_MODE=copy
+    # Let the Dockerfile’s ENTRYPOINT/CMD launch the app

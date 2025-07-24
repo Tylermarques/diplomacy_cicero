@@ -11,6 +11,13 @@ endif(NOT DEFINED POSTMAN_DIR)
 # For pybind11 to work on Linux.
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+# Set C++17 standard globally
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Disable problematic warnings for third-party code
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-maybe-uninitialized")
+
 #############################################
 ### LIBS ####################################
 #############################################
